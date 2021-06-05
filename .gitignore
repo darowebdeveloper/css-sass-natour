@@ -6,9 +6,6 @@
 /test/ChangesAndRemovals
 /benchmark/js
 /benchmark/fixtures
-/dist
-build/
-docs/
 /src/images
 /coverage
 /.nyc_output
