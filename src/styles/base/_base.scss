@@ -1,0 +1,43 @@
+// reset and styles for html and body elements
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+html {
+  // this acts a base rather than typography
+  // it defines what 1rem, which is 10px
+  font-size: 62.5%; // User's font is 16px; so 62.5% (10/16) is 10px of 16px;
+  // it also allow users to change default font size.
+
+  @include responsive(tab-land) {
+    // 1200px
+    font-size: 56.25%; // 1 rem = 9px, 9/16 = 56.25%
+  }
+
+  @include responsive(tab-port) {
+    // 900px
+    font-size: 50%; // 1 rem = 8px, 8/16 = 50%
+  }
+
+  @include responsive(big-desktop) {
+    // 1800px
+    font-size: 75%; // 1rem = 12px , 12/16 = 75%
+  }
+}
+body {
+  // use inherent for box-sizing for * elements
+  box-sizing: border-box;
+  padding: 3rem;
+  @include responsive(tab-port) {
+    // 900px
+    padding: 0;
+  }
+}
+
+::selection {
+  background-color: $color-primary;
+  color: $color-white;
+}
