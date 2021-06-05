@@ -665,7 +665,7 @@ video {
           rgba(126, 213, 111, 0.8),
           rgba(40, 180, 131, 0.8)
         ),
-        url(assets/15e5f60eb95486007f5a.jpg);
+        url(/assets/15e5f60eb95486007f5a.jpg);
 }
 .bg-gradient-to-r {
 	background-image: linear-gradient(to right, var(--tw-gradient-stops));

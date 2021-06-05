@@ -33,7 +33,7 @@ module.exports = (env) => {
           chunks: ['tailwind'],
         }),
         new MiniCssExtractPlugin({
-          filename: 'styles/[name].css',
+          filename: '[name].css',
         }),
       ],
       module: {
@@ -49,13 +49,27 @@ module.exports = (env) => {
           },
           {
             test: /\.css$/i,
-            use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
+            use: [
+              {
+                loader: MiniCssExtractPlugin.loader,
+                options: {
+                  publicPath: '/',
+                },
+              },
+              'css-loader',
+              'postcss-loader',
+            ],
           },
           {
             test: /\.s[ac]ss$/i,
             use: [
               // Creates `style` nodes from JS strings
-              MiniCssExtractPlugin.loader,
+              {
+                loader: MiniCssExtractPlugin.loader,
+                options: {
+                  // publicPath: '/',
+                },
+              },
               // Translates CSS into CommonJS
               'css-loader',
               'postcss-loader',
